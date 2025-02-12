@@ -31,9 +31,10 @@ You can run the code directly in your browser using the following CodeSandbox li
   <body>
     <div class="main-container">
         <!-- TODO: Add the title of the webpage, an image, and a message here -->
-    </div>
     <div class="button-container">
         <!-- TODO: Add the Yes and No buttons here -->
+    </div>
+
     </div>
     <script type="text/javascript" src="index.js"></script>
   </body>
@@ -51,6 +52,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 70vh;
 }
 
 .main-container {
