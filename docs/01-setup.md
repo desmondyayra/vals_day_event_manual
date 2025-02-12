@@ -19,7 +19,7 @@ You can run the code directly in your browser using the following CodeSandbox li
 5. Once installed, click on the "Reload" button to reload the window
 
 ## Creating the Files
-1. Create a new folder on your desktop and name it "Valentines Day 2024"
+1. Create a new folder on your desktop and name it "Valentines Day 2025"
 2. Inside the folder, create a new file and name it "index.html" You're going to want to paste the following HTML into the file:
 ```html
 <!DOCTYPE html>
