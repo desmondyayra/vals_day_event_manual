@@ -1,101 +1,93 @@
 # Part 2: Creating the landing page
 
+### Setting Up the First View
 
-For the second part, we will create a landing page that:
+When users visit our webpage, we want them to first see an introductory message before transitioning to the main content.
 
-1. Displays a message with a typing effect.
-2. Takes the text dynamically as an input.
-3. Automatically transitions to the next page (page2.html) after 20 seconds.
+To achieve this effect:
 
+1. We will create an intro container that appears first.
+2. After a few seconds, it will fade away, revealing the main container.
+3. We will use JavaScript timeouts to control this transition.
 
-### Setting up the HTML
+### Hiding Elements with CSS
+We need a way to hide and show containers dynamically. The easiest way is to define a CSS class that makes elements invisible.
+Add the following CSS to styles.css. Afterwards, we update our main-container with this class in the HTML file.
 
-We will add the following to our index.html. 
+```css
+.hidden {
+  display: none;
+}
+```
+### Creating the into Container
+
+Now, lets go ahead and create the intro container. This container is very similar to the container we created earlier, but with a different id. It will display a message and a gif.
 
 ```html
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Title of page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-    <!-- Main Container -->
-    <div class="main-container">
-        <p>Dear crush, I have a message for you</p>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-
+<div id="intro-container">
+    <img
+        id="gif-container"
+        src=message_gif
+        alt="Gif of message gif"
+    />
+      <p>Hi special person, I have a message for you</p>
+</div>
 ```
 
+### Transitioning to the Main Container
 
-### Creating a typing effect using javascript.
-
-We'll define a reusable function that takes:
-
-1. The target element ID where the text will appear.
-2. The text to be typed out.
-
-Update script.js with the following:
+Now comes the fun part! We will hide the intro container after a few seconds and show the main container using JavaScript.
+We are going to use timeouts to write a function that will wait for sometime, then hides the intro container by setting the display to "none".
+Afterwards, it will remove hidden class from our main-container to make it visible.
 
 ```javascript
 
+setTimeout(() => {
+    document.getElementById("intro-container").style.display = "none";
+    document.getElementById("main-container").classList.remove("hidden");
+}, 9000);
+
+```
+
+If the transition feels too abrupt, we can introduce a small delay between hiding the intro and showing the main container.
+This can be done by using another timeout to delay the second command. Your code should look something like this.
+
+```javascript
+
+setTimeout(() => {
+    document.getElementById("intro-container").style.display = "none";
+        
+    setTimeout(() => {
+        document.getElementById("main-container").classList.remove("hidden");
+    }, 2000);
+
+}, 9000);
+
+```
+
+### Adding a Typing Effect
+
+To increase excitement, we’ll animate the text so it types out letter by letter, rather than appearing all at once.
+We’ll make a reusable function that can type any text dynamically.
+Our function is going to take the id of the element we want our text to appear, the text, along with the speed (dela between typing each letter).
+
+
+```javascript 
 
 function createTypingEffect(elementId, text, speed = 100) {
-
-    /**
-    * Helper function to create a typing effect.
-    *  elementId - The ID of the HTML element to display text.
-    *  text - The text to type out.
-    *  speed - Typing speed in milliseconds (default is 100ms).
- */
     const element = document.getElementById(elementId);
     let index = 0;
 
     function typeNextLetter() {
         if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeNextLetter, speed);
+        element.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeNextLetter, speed);
         }
     }
 
     typeNextLetter();
 }
 
-
 ```
 
-
-### Creating the page transition
-
-We will update our javascript to redirect the page after sometime. 
-
-```javascript
-    // Redirect to page2.html after 20 seconds
-
-    setTimeout(() => {
-    window.location.href = "page2.html";
-}, 20000);
-```
-
-Now, lets use the our helper function to display our landing message.
-
-```javascript
-    createTypingEffect("landing-message", "Will you be my valentine?", 100);
-```
-
-The next step is to modify our index.html page by setting the id for our container. 
-
-```html
-    <div class="main-container">
-        <p id="landing-message"></p>
-    </div>
-```
