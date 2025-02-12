@@ -2,7 +2,12 @@
 
 Ideally, we are assuming that you have already installed Visual Studio Code and the Live Server extension for VS code. If not, you can download Visual Studio Code from [here](https://code.visualstudio.com/download) and the Live Server extension from [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
 
-If you don't want to go through that process, then you can use the following CodeSandBox link to run the code in your browser: (https://codesandbox.io/p/sandbox/y98d8z?file=%2Fsrc%2Findex.html). You're going to want to press on the green button that says "Fork and Run" and login into your account if needed. 
+
+You can run the code directly in your browser using the following CodeSandbox link: (https://codesandbox.io/p/sandbox/gdzlzh?file=%2Fsrc%2Fstyles.css%3A14%2C18). If you don’t have a CodeSandbox account, you’ll need to create one. To edit the code, click the Fork button at the top right of the window to create your own copy and start coding!
+
+
+
+
 
 # Setting Up on Visual Studio Code
 
@@ -21,7 +26,7 @@ If you don't want to go through that process, then you can use the following Cod
 <html>
   <head>
     <title>Emerging Coders Valentines Day Event</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <div class="main-container">
@@ -55,6 +60,12 @@ body {
   justify-content: center;
 }
 
+#main-container img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
 .button-container {
   display: flex;
   flex-direction: row;
@@ -73,6 +84,12 @@ body {
   margin-top: 20px;
   margin-bottom: 10%;
   gap: 15px;
+}
+
+#intro-container img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 #yes-button {

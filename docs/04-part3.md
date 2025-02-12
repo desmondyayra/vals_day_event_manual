@@ -13,9 +13,16 @@ When the user hits the yes button, we want 3 things to happen.
 We want to write a function that is triggered when the user clicks on the yes button.
 
 ```javascript
+
+const yesButton = document.getElementById("yes-button");
+
+
 yesButton.addEventListener("click", () => {
-    // Insert Tasks Here!
+  // Insert task here
 });
+
+
+
 ```
 When the user hits yes we only have to remove and set variables to new values. 
 
@@ -25,11 +32,15 @@ To change the GIF and the main text, we just set the variables responsible for t
 
 Your finished product should look like this:
 ```javascript
+
 yesButton.addEventListener("click", () => {
     yesButton.style.display = "none";
     noButton.style.display = "none";
-    gif.src = "https://media.tenor.com/TEC6z0acIbUAAAAj/cute-bears-love.gif";
-    mainText.textContent = "yay! i knew you would say yes! <3";
+    let gif_element = document.getElementById("main-container-gif");
+    let main_text_element = document.getElementById("main-text");
+    gif_element.src =
+        "https://media.tenor.com/TEC6z0acIbUAAAAj/cute-bears-love.gif";
+    main_text_element.textContent = "yay! i knew you would say yes! <3";
 });
 
 ```

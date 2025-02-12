@@ -49,8 +49,7 @@ Now it's time for your pick-up line! Place it after the first h3 element (Like t
 For reference, your code should resemble something like this when you sandwich it all together: 
 ```html
 <div class="main-container">
-    <h1>Title</h1>
-    <img id="gif-container" src=tenor link alt="Gif of whatever you picked">
+    <img id="gif-container" src=tensor-link alt="Gif of whatever you picked">
     <h3 id="main-text">will you be my valentine?</h3>
 </div>
 ```

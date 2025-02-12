@@ -30,7 +30,7 @@ Now, lets go ahead and create the intro container. This container is very simila
         src=message_gif
         alt="Gif of message gif"
     />
-      <p>Hi special person, I have a message for you</p>
+      <h3 id="intro-text" >Hi person's name, I have a message for you</h3>
 </div>
 ```
 
@@ -89,5 +89,5 @@ function createTypingEffect(elementId, text, speed = 100) {
     typeNextLetter();
 }
 
-```
+
 
